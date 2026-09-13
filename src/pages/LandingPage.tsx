@@ -2,6 +2,7 @@ import { BlurText } from '../components/motion/BlurText'
 import { MagneticButton } from '../components/motion/MagneticButton'
 import { IconBook, IconFolder, IconPen } from '../components/Icons'
 import { HeroEditorDemo } from '../components/HeroEditorDemo'
+import { COLOR_THEME_LIST, TEMPLATE_STYLE_LIST } from '../constants/themes'
 
 interface LandingPageProps {
   onEnter: () => void
@@ -13,40 +14,40 @@ const FEATURES = [
   {
     no: '01',
     title: '专注书写',
-    body: '等宽编辑区、图标工具栏、快捷键插入。少打扰，让你把句子写完。',
+    body: '等宽编辑区、图标工具栏、快捷键。少打扰，把句子写完。',
   },
   {
     no: '02',
     title: '微信观感预览',
-    body: '17px 正文、1.75 行距、引用与代码块贴近手机图文阅读节奏。',
+    body: '版式 × 配色实时渲染，标题、引用、代码块贴近图文阅读。',
   },
   {
     no: '03',
     title: '带样式复制',
-    body: '复制 Markdown 或内联富文本，粘贴进公众号后台仍保留层级。',
+    body: '一键写入内联 HTML，粘贴公众号后台尽量还原预览。',
   },
   {
     no: '04',
-    title: '多草稿本地库',
-    body: '自动保存到浏览器，最多 30 份草稿，可重命名、切换、删除。',
+    title: '本地文章库',
+    body: '最多 30 份草稿自动保存，搜索、重命名、切换、删除。',
   },
   {
     no: '05',
-    title: '导入与导出',
-    body: '支持 .md / .markdown / .txt；按草稿名导出，随时带走原稿。',
+    title: '导入导出',
+    body: '支持 .md / .markdown / .txt，原稿可随时带走。',
   },
   {
     no: '06',
-    title: '三种排版主题',
-    body: '经典、墨黑、杂志——同一 Markdown，不同气质的文章观感。',
+    title: '语法高亮',
+    body: '代码块带语言标签与高亮，科技风可切换透明底。',
   },
 ]
 
 const STEPS = [
-  { no: '01', title: '写', body: '在编辑器用 Markdown 写标题、段落、列表、代码与表格。' },
-  { no: '02', title: '看', body: '右侧即时预览微信图文观感，确认节奏与层级。' },
-  { no: '03', title: '管', body: '在「我的文章」里搜索、重命名、复制或删除草稿。' },
-  { no: '04', title: '贴', body: '复制 Markdown 或富文本，粘贴回公众号后台继续排版。' },
+  { no: '01', title: '写', body: 'Markdown 写标题、段落、列表、代码与表格。' },
+  { no: '02', title: '选', body: '在预览顶栏组合版式与配色，确认图文气质。' },
+  { no: '03', title: '管', body: '在「我的文章」搜索、重命名或删除草稿。' },
+  { no: '04', title: '贴', body: '复制到公众号，后台继续微调后发布。' },
 ]
 
 export function LandingPage({ onEnter, onOpenArticles, onOpenDocs }: LandingPageProps) {
@@ -58,7 +59,7 @@ export function LandingPage({ onEnter, onOpenArticles, onOpenDocs }: LandingPage
             <div className="zs-hero-inner">
               <p className="zs-hero-badge fade-up">
                 <span className="zs-hero-badge-dot" />
-                WEIJIAN · 公众号写作工作台
+                WEIJIAN v1.3 · 公众号写作工作台
               </p>
 
               <h1 className="zs-hero-title fade-up" style={{ animationDelay: '0.08s' }}>
@@ -70,8 +71,8 @@ export function LandingPage({ onEnter, onOpenArticles, onOpenDocs }: LandingPage
               </h1>
 
               <p className="zs-hero-sub fade-up" style={{ animationDelay: '0.18s' }}>
-                为公众号长文准备的极简工作台：左边是原稿，右边是微信图文观感。
-                本地保存、导入导出、一键复制——从草稿到后台，尽量少断点。
+                左边是原稿，右边是微信图文观感。版式与配色可独立组合，
+                语法高亮代码块、本机文章库、一键复制内联样式——从草稿到后台尽量少断点。
               </p>
 
               <div className="zs-hero-actions fade-up" style={{ animationDelay: '0.26s' }}>
@@ -103,12 +104,12 @@ export function LandingPage({ onEnter, onOpenArticles, onOpenDocs }: LandingPage
 
           <dl className="zs-hero-stats fade-up" style={{ animationDelay: '0.5s' }} aria-label="产品要点">
             <div>
-              <dt>双栏</dt>
-              <dd>写作 / 预览</dd>
+              <dt>4×6</dt>
+              <dd>版式 × 配色</dd>
             </div>
             <div>
-              <dt>3</dt>
-              <dd>排版主题</dd>
+              <dt>双栏</dt>
+              <dd>写作 / 预览</dd>
             </div>
             <div>
               <dt>30</dt>
@@ -121,6 +122,35 @@ export function LandingPage({ onEnter, onOpenArticles, onOpenDocs }: LandingPage
           </dl>
         </section>
 
+        <section className="landing-section" aria-labelledby="templates-title">
+          <div className="landing-section-head">
+            <p className="landing-section-eyebrow">Templates</p>
+            <h2 id="templates-title" className="landing-section-title">
+              版式定结构，配色定气质
+            </h2>
+            <p className="landing-section-desc">
+              四套版式负责标题与引用装饰，六套配色只换主色与辅助色，可任意组合。
+            </p>
+          </div>
+          <div className="landing-template-row">
+            {TEMPLATE_STYLE_LIST.map((t) => (
+              <article key={t.id} className="landing-template-card">
+                <span className="landing-template-tag">{t.tag}</span>
+                <h3 className="landing-template-name">{t.name}</h3>
+                <p className="landing-template-desc">{t.desc}</p>
+              </article>
+            ))}
+          </div>
+          <div className="landing-color-row" aria-label="配色方案">
+            {COLOR_THEME_LIST.map((c) => (
+              <div key={c.id} className="landing-color-item">
+                <span className="landing-color-dot" style={{ background: c.primaryColor }} />
+                <span>{c.name}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section className="landing-section" aria-labelledby="features-title">
           <div className="landing-section-head">
             <p className="landing-section-eyebrow">Capabilities</p>
@@ -128,7 +158,7 @@ export function LandingPage({ onEnter, onOpenArticles, onOpenDocs }: LandingPage
               写作链路上需要的，刚好都有
             </h2>
             <p className="landing-section-desc">
-              不做花哨的富文本画布，只把「写 Markdown → 看微信观感 → 复制回后台」这件事做顺。
+              不做花哨的富文本画布，只把「写 Markdown → 看微信观感 → 复制回后台」做顺。
             </p>
           </div>
           <div className="landing-features">
@@ -146,14 +176,14 @@ export function LandingPage({ onEnter, onOpenArticles, onOpenDocs }: LandingPage
           </div>
         </section>
 
-        <section className="landing-section landing-section--split" aria-labelledby="flow-title">
+        <section className="landing-section" aria-labelledby="flow-title">
           <div className="landing-section-head">
             <p className="landing-section-eyebrow">Workflow</p>
             <h2 id="flow-title" className="landing-section-title">
               四步，从空白到可粘贴
             </h2>
           </div>
-          <ol className="landing-steps">
+          <ol className="landing-steps landing-steps--grid">
             {STEPS.map((step) => (
               <li key={step.no} className="landing-step">
                 <span className="landing-step-no">{step.no}</span>
@@ -164,21 +194,6 @@ export function LandingPage({ onEnter, onOpenArticles, onOpenDocs }: LandingPage
               </li>
             ))}
           </ol>
-          <div className="landing-preview-mock">
-            <div className="landing-preview-mock-chrome">
-              <span />
-              <span />
-              <span />
-            </div>
-            <div className="landing-preview-mock-body">
-              <div className="landing-preview-mock-kicker">WeChat Preview</div>
-              <div className="landing-preview-mock-h1" />
-              <div className="landing-preview-mock-line" />
-              <div className="landing-preview-mock-line short" />
-              <div className="landing-preview-mock-quote" />
-              <div className="landing-preview-mock-code" />
-            </div>
-          </div>
         </section>
 
         <section className="landing-cta-band" aria-labelledby="final-cta-title">
@@ -188,7 +203,7 @@ export function LandingPage({ onEnter, onOpenArticles, onOpenDocs }: LandingPage
               准备好写下一篇了吗？
             </h2>
             <p className="landing-cta-band-body">
-              打开编辑器即可开始；也可以先看文档了解导入导出与快捷键。
+              打开编辑器即可开始；或先看文档了解快捷键与版式说明。
             </p>
           </div>
           <MagneticButton className="landing-primary-cta" onClick={onEnter}>
@@ -201,7 +216,7 @@ export function LandingPage({ onEnter, onOpenArticles, onOpenDocs }: LandingPage
       <footer className="site-footer">
         <div className="site-footer-inner">
           <div className="site-footer-brand">
-            <div className="site-footer-title">微笺</div>
+            <div className="site-footer-title">微笺 Weijian</div>
             <p className="site-footer-desc">
               面向公众号作者的 Markdown 写作工作台。本地优先，开箱即用，把稿子从草稿贴回后台。
             </p>
@@ -223,27 +238,13 @@ export function LandingPage({ onEnter, onOpenArticles, onOpenDocs }: LandingPage
 
             <div className="site-footer-col">
               <h3 className="site-footer-heading">资源</h3>
-              <button
-                type="button"
-                className="site-footer-link"
-                onClick={() => onOpenDocs()}
-              >
+              <button type="button" className="site-footer-link" onClick={onOpenDocs}>
                 快速开始
               </button>
-              <button
-                type="button"
-                className="site-footer-link"
-                onClick={() => onOpenDocs()}
-              >
-                快捷键说明
-              </button>
-              <button
-                type="button"
-                className="site-footer-link"
-                onClick={() => onOpenDocs()}
-              >
+              <button type="button" className="site-footer-link" onClick={onOpenDocs}>
                 更新日志
               </button>
+              <span className="site-footer-meta">v1.3.0</span>
             </div>
 
             <div className="site-footer-col">
