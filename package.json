@@ -3,7 +3,17 @@
   "private": true,
   "version": "1.3.0",
   "type": "module",
+  "license": "GPL-3.0-or-later",
   "description": "微笺 — 公众号 Markdown 写作工具",
+  "author": "duan-deqing",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duan-deqing/weijian.git"
+  },
+  "bugs": {
+    "url": "https://github.com/duan-deqing/weijian/issues"
+  },
+  "homepage": "https://duan-deqing.github.io/weijian/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
