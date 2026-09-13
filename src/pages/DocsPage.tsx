@@ -69,9 +69,20 @@ const GUIDE_SECTIONS = [
 
 const CHANGELOG = [
   {
-    version: 'v1.3.0',
+    version: 'v1.4.0',
     date: '2026-09-14',
     tag: '当前',
+    items: [
+      '正式开源：采用 GPL-3.0-or-later 许可证',
+      'GitHub Pages 自动部署至 duan-deqing.github.io/weijian/',
+      'README 按开源项目规范重写（徽章、结构、贡献与许可说明）',
+      '首页新增版式 × 配色介绍区，能力与流程文案对齐 v1.3',
+    ],
+  },
+  {
+    version: 'v1.3.0',
+    date: '2026-09-14',
+    tag: null,
     items: [
       '版式 × 配色两维模板：经典 / 卡片 / 文艺 / 科技 × 6 套配色',
       'marked 渲染微信内联 HTML，预览与复制结果一致',

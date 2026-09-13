@@ -218,17 +218,6 @@ Vite `base` 已设为 `/weijian/`。若部署到其它路径，请同步修改 `
 
 本项目采用 **GNU General Public License v3.0 or later**（GPL-3.0-or-later）开源。
 
-你可以自由地使用、修改和分发本软件，但须遵守 GPL 的 copyleft 条款：
-
-- 若分发本软件或基于本软件的衍生作品，**必须**以相同许可证（GPL）开放对应源代码
-- 修改后的版本须保留原版权与许可声明
-- 提供源代码的方式须满足 GPL 对「对应源码」的要求
-
-完整文本见仓库根目录 [LICENSE](./LICENSE)，或访问：  
-<https://www.gnu.org/licenses/gpl-3.0.html>
-
-商业闭源使用或私有部署若与 GPL 冲突，请先联系作者协商授权。
-
 ---
 
 <p align="center">
