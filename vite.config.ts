@@ -3,7 +3,8 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  // GitHub Pages 子路径：https://duan-deqing.github.io/weijian/
+  base: '/weijian/',
   server: {
     host: '127.0.0.1',
     port: 5173,
