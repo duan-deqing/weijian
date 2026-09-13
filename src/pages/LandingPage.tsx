@@ -244,7 +244,7 @@ export function LandingPage({ onEnter, onOpenArticles, onOpenDocs }: LandingPage
               <button type="button" className="site-footer-link" onClick={onOpenDocs}>
                 更新日志
               </button>
-              <span className="site-footer-meta">v1.3.0</span>
+              <span className="site-footer-meta">v1.4.0</span>
             </div>
 
             <div className="site-footer-col">
